@@ -15,7 +15,7 @@ function initializeWithApi(api) {
 
       const likesHTML = likesCount > 0 ? I18n.t(`${i18nKey}.likes`, { count: likesCount }) : '';
       const solutionsHTML = solutionsCount > 0 ? I18n.t(`${i18nKey}.solutions`, { count: solutionsCount }) : '';
-      const rankHTML = isAdmin ? "admin" : "user"; // checks if user is admin, mod or normal, and shows role or trust level.
+      const rankHTML = isAdmin? '<b style="color:#FF0000;">' + I18n.t(`${i18nKey}.user_type.admin`) + "</b>":(isModerator? '<b style="color:#FF9333;">' + I18n.t(`${i18nKey}.user_type.moderator`) + "</b>":trustLevelName.capitalize()); // checks if user is admin, mod or normal, and shows role or trust level.
       
       const htmlCodes = [];
       htmlCodes.push(
