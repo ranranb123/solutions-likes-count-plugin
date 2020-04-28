@@ -9,20 +9,19 @@ function initializeWithApi(api) {
       const trustLevel = helper.attrs.user_trust_level;
       const trustLevelName = trustLevel ? Discourse.Site.currentProp('trustLevels').findBy('id', trustLevel).name : '';
       const isAdmin = helper.attrs.admin;
+      const isModerator = helper.attrs.moderator;
       
       const i18nKey = `solutions_likes_plugin`;
 
       const likesHTML = likesCount > 0 ? I18n.t(`${i18nKey}.likes`, { count: likesCount }) : '';
       const solutionsHTML = solutionsCount > 0 ? I18n.t(`${i18nKey}.solutions`, { count: solutionsCount }) : '';
-      const trustLevelHTML = trustLevelName.capitalize();
-      const adminHTML = isAdmin? 'yes':'no';
+      const rankHTML = isAdmin? '<b style="color:#FF0000;">' + I18n.t(`${i18nKey}.user_type.admin`) + "</b>":isModerator? ('<b style="color:#FF9333;">' + I18n.t(`${i18nKey}.user_type.moderator`) + "</b>":trustLevelName.capitalize()); // checks if user is admin, mod or normal, and shows role or trust level.
       
       const htmlCodes = [];
       htmlCodes.push(
-        trustLevelHTML,
+        rankHTML,
         likesHTML,
         solutionsHTML,
-        adminHTML
       );
 
       const htmlString = htmlCodes.filter(code => code.length > 0).join("&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;");
