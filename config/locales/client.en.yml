@@ -2,8 +2,8 @@ en:
   js:
     solutions_likes_plugin:
       likes:
-        one: "<b>{{count}}</b> Like"
-        other: "<b>{{count}}</b> Likes"
+        one: "<b>{{count}}</b> ❤️"
+        other: "<b>{{count}}</b> ❤️"
       solutions: 
-        one: "<b>{{count}}</b> Solution"
-        other: "<b>{{count}}</b> Solutions"
+        one: "<b>{{count}}</b> ✅"
+        other: "<b>{{count}}</b> ✅"
