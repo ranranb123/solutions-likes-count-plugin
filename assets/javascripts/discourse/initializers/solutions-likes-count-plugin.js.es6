@@ -17,8 +17,7 @@ function initializeWithApi(api) {
       const trustLevelHTML = trustLevelName.capitalize();
 
             // TEMPORARY CODE
-      const user = Discourse.User.current();
-      const primaryHTML = user.primary_group_name;
+      //const primaryHTML = Discourse.User.current().primary_group_name.toString();
       /*if(user.primary_group_name.toLowerCase() === "admin") {
         
       }*/
@@ -27,7 +26,7 @@ function initializeWithApi(api) {
       
       const htmlCodes = [];
       htmlCodes.push(
-        primaryHTML,
+        //primaryHTML,
         trustLevelHTML,
         likesHTML,
         solutionsHTML
