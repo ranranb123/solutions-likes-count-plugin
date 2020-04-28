@@ -33,6 +33,10 @@ after_initialize do
       def admin
         object.user.admin if object&.user
       end
+   
+      def moderator
+        object.user.moderator if object&.user
+      end
       
       private
         def poster_summary
