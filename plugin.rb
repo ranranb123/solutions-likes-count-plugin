@@ -13,7 +13,7 @@ after_initialize do
   if SiteSetting.enable_solutions_and_likes_count_plugin
     require_dependency 'post_serializer'
     class ::PostSerializer
-      attributes :accepted_answers_count, :likes_recieved_count, :user_trust_level
+      attributes :accepted_answers_count, :likes_recieved_count, :user_trust_level, :user_roles
       def accepted_answers_count
         if poster_summary.present?
           @summary.solved_count
@@ -28,6 +28,10 @@ after_initialize do
 
       def user_trust_level
         object.user.trust_level if object&.user
+      end
+      
+      def user_roles
+        object.user.roles if object&.user
       end
 
       private
