@@ -8,5 +8,5 @@ en:
         one: "<b>{{count}}</b> ✅"
         other: "<b>{{count}}</b> ✅"
       user_type:
-        admin: "admin"
-        moderator: "moderator"
+        admin: "<b style="color:red;">admin</b>"
+        moderator: "<b style="color:red;">moderator</b>"
