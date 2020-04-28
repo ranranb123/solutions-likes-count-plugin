@@ -13,20 +13,10 @@ function initializeWithApi(api) {
 
       const likesHTML = likesCount > 0 ? I18n.t(`${i18nKey}.likes`, { count: likesCount }) : '';
       const solutionsHTML = solutionsCount > 0 ? I18n.t(`${i18nKey}.solutions`, { count: solutionsCount }) : '';
-    
       const trustLevelHTML = trustLevelName.capitalize();
-
-            // TEMPORARY CODE
-      //const primaryHTML = Discourse.User.current().primary_group_name.toString();
-      /*if(user.primary_group_name.toLowerCase() === "admin") {
-        
-      }*/
-      // TEMPORARY CODE
-      
       
       const htmlCodes = [];
       htmlCodes.push(
-        //primaryHTML,
         trustLevelHTML,
         likesHTML,
         solutionsHTML
