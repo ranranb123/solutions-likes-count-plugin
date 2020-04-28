@@ -6,18 +6,29 @@ function initializeWithApi(api) {
     api.decorateWidget('poster-name:after', function(helper) {
       const solutionsCount = helper.attrs.accepted_answers_count;
       const likesCount = helper.attrs.likes_recieved_count;
-      const trustLevel = helper.attrs.user_trust_level;
-      const trustLevelName = trustLevel ? Discourse.Site.currentProp('trustLevels').findBy('id', trustLevel).name : '';
+      const role = helper.attrs.user_roles;
+      //const trustLevel = helper.attrs.user_trust_level;
+      //const trustLevelName = trustLevel ? Discourse.Site.currentProp('trustLevels').findBy('id', trustLevel).name : '';
+      
+      
+      // TEMPORARY CODE
+      /*const user = Discourse.User.current();
+      if(user.primary_group_name.toLowerCase() === "group1") {
+        
+      }*/
+      // TEMPORARY CODE
 
       const i18nKey = `solutions_likes_plugin`;
 
       const likesHTML = likesCount > 0 ? I18n.t(`${i18nKey}.likes`, { count: likesCount }) : '';
       const solutionsHTML = solutionsCount > 0 ? I18n.t(`${i18nKey}.solutions`, { count: solutionsCount }) : '';
-      const trustLevelHTML = trustLevelName.capitalize();
+      const roleHTML = role[0] + " " + role[1] + " " + role[2];
+      //const trustLevelHTML = trustLevelName.capitalize();
 
       const htmlCodes = [];
       htmlCodes.push(
-        trustLevelHTML,
+        //trustLevelHTML,
+        roleHTML,
         likesHTML,
         solutionsHTML
       );
