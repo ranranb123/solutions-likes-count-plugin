@@ -2,3 +2,6 @@ plugins:
   enable_solutions_and_likes_count_plugin:
     default: false
     client: true
+  ranel: # lel
+    default: true
+    client: false
