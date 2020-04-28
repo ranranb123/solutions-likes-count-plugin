@@ -15,7 +15,7 @@ function initializeWithApi(api) {
 
       const likesHTML = likesCount > 0 ? I18n.t(`${i18nKey}.likes`, { count: likesCount }) : '';
       const solutionsHTML = solutionsCount > 0 ? I18n.t(`${i18nKey}.solutions`, { count: solutionsCount }) : '';
-      const rankHTML = isAdmin ? "מנהל ראשי" : trustLevelName.capitalize(); // checks if user is admin, mod or normal, and shows role or trust level.
+      const rankHTML = isAdmin ? "admin" : "user"; // checks if user is admin, mod or normal, and shows role or trust level.
       
       const htmlCodes = [];
       htmlCodes.push(
