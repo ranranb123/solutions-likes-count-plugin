@@ -30,6 +30,10 @@ after_initialize do
         object.user.trust_level if object&.user
       end
       
+      def admin
+        object.user.admin if object&.user
+      end
+      
       private
         def poster_summary
           if object&.user
