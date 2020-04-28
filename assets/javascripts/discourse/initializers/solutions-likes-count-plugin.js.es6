@@ -17,9 +17,9 @@ function initializeWithApi(api) {
 
       const htmlCodes = [];
       htmlCodes.push(
+        trustLevelHTML,
         likesHTML,
-        solutionsHTML,
-        trustLevelHTML
+        solutionsHTML
       );
 
       const htmlString = htmlCodes.filter(code => code.length > 0).join("&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;");
